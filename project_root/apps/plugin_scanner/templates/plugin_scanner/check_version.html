@@ -1,0 +1,16 @@
+{% extends "plugin_scanner/base.html" %}
+
+{% block content %}
+  <h2>Check Plugin Version</h2>
+  <form method="POST">
+    {% csrf_token %}
+    <label for="plugin_name">Plugin Name:</label><br>
+    <input type="text" id="plugin_name" name="plugin_name" required><br>
+    <input type="submit" value="Check Version">
+  </form>
+
+  {% if latest_version %}
+    <h3>Latest Version:</h3>
+    <p>{{ latest_version }}</p>
+  {% endif %}
+{% endblock %}

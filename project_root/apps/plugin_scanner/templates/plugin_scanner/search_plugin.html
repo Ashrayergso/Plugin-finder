@@ -1,0 +1,20 @@
+```html
+{% extends "plugin_scanner/base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Search Plugin</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="pluginName">Plugin Name</label>
+            <input type="text" class="form-control" id="pluginName" name="pluginName" placeholder="Enter plugin name">
+        </div>
+        <button type="submit" class="btn btn-primary" id="search-button">Search</button>
+    </form>
+    <div id="search-results">
+        <!-- Search results will be populated here by main.js -->
+    </div>
+</div>
+{% endblock %}
+```

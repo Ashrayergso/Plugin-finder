@@ -1,0 +1,31 @@
+```html
+{% extends "plugin_scanner/base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Audio Plugin Units</h1>
+    <table id="plugin-table" class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Version</th>
+                <th>Creator</th>
+                <th>Installation Date</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for plugin in plugins %}
+            <tr>
+                <td>{{ plugin.name }}</td>
+                <td>{{ plugin.version }}</td>
+                <td>{{ plugin.creator }}</td>
+                <td>{{ plugin.install_date }}</td>
+                <td><a href="{{ plugin.url }}" class="btn btn-primary">Check Online</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+```
